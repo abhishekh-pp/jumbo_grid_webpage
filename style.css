@@ -1,0 +1,130 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+}
+
+header {
+  display: flex;
+  font-size: 1rem;
+  align-items: center;
+  padding-inline: 2rem;
+  justify-content: space-between;
+  background-color: #1c00be;
+  color: white;
+  background-size: 100% 100%;
+  border-radius: 0px 0px 20px 20px;
+}
+
+ul {
+  display: grid;
+  list-style: none;
+  grid-auto-flow: column;
+  column-gap: 4rem;
+}
+ul a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+nav {
+  display: flex;
+  flex-direction: row;
+}
+
+.hero {
+  height: 100vh;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+p {
+  font-size: 14px;
+  font-weight: 400px;
+  margin: 10px 0;
+}
+
+.wrap {
+  display: grid;
+
+  height: 100%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100px 1fr 100px;
+  grid-template-areas:
+    "header header"
+    "text image"
+    "footer footer";
+}
+
+.image {
+  background-image: url(https://cdn.dribbble.com/users/12947/screenshots/5319401/playlist-discover_2x.png);
+  background-size: 100% 100%;
+}
+
+header {
+  grid-area: header;
+}
+
+div .text {
+  display: grid;
+  padding: 50px;
+  grid-area: text;
+  justify-content: center;
+  align-content: center;
+  background-color: #ffffff;
+}
+
+div .image {
+  grid-area: image;
+}
+
+.btn {
+  display: grid;
+  align-content: flex-start;
+  padding: 15px 30px;
+  width: 150px;
+  background: #1c00be;
+  color: #ffff;
+  outline: none;
+  border: none;
+  box-shadow: 1px 2px #333;
+  border-radius: 10px;
+}
+
+footer {
+  display: grid;
+  grid-area: footer;
+  background-color: #1c00be;
+  color: #ffffff;
+  text-align: center;
+  align-content: center;
+  border-radius: 20px 20px 0px 0px;
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .wrap {
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px repeat(2, 1fr) 100px;
+    grid-template-areas:
+      "header"
+      "text"
+      "image"
+      "footer";
+  }
+}
